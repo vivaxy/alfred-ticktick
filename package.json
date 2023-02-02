@@ -1,0 +1,24 @@
+{
+  "name": "alfred-ticktick",
+  "version": "1.0.0",
+  "description": "Alfred workflow for TickTick and Dida365",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivaxy/alfred-ticktick.git"
+  },
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "author": "vivaxy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vivaxy/alfred-ticktick/issues"
+  },
+  "homepage": "https://github.com/vivaxy/alfred-ticktick#readme",
+  "dependencies": {
+    "alfy": "^1.1.0"
+  }
+}
