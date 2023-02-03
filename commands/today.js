@@ -3,53 +3,26 @@
  * @author vivaxy
  */
 import alfy from 'alfy';
-
-function getTodayTodo(todo) {
-  const todayTodoList = todo.syncTaskBean.update
-    .filter(function (task) {
-      const dueDate = new Date(task.dueDate);
-      const now = new Date();
-      return (
-        dueDate.getFullYear() === now.getFullYear() &&
-        dueDate.getMonth() === now.getMonth() &&
-        dueDate.getDate() === now.getDate()
-      );
-    })
-    .map(function (task) {
-      const project = todo.projectProfiles.find(function (project) {
-        return project.id === task.projectId;
-      });
-      return {
-        title: task.title,
-        subtitle: project ? project.name : 'Inbox',
-      };
-    });
-  return todayTodoList.length
-    ? todayTodoList
-    : [
-        {
-          title: '🎉',
-          subtitle: 'All tasks completed!',
-          valid: false,
-        },
-      ];
-}
+import getTodoList from '../helpers/get-todo-list.js';
+import updateTodo from '../helpers/update-todo.js';
 
 export default async function today() {
-  const token = alfy.config.get('token');
   const cachedTodo = alfy.cache.get('todo');
 
   try {
-    alfy.output(getTodayTodo(cachedTodo), { rerunInterval: 1 });
+    alfy.output(
+      getTodoList(cachedTodo).filter(function ({ variables }) {
+        const dueDate = new Date(variables.dueDate);
+        const now = new Date();
+        return (
+          dueDate.getFullYear() === now.getFullYear() &&
+          dueDate.getMonth() === now.getMonth() &&
+          dueDate.getDate() === now.getDate()
+        );
+      }),
+      { rerunInterval: 1 }
+    );
   } catch (e) {}
 
-  const resp = await alfy.fetch(
-    'https://api.dida365.com/api/v2/batch/check/0',
-    {
-      headers: {
-        Cookie: `t=${token}`,
-      },
-    }
-  );
-  alfy.cache.set('todo', resp);
+  await updateTodo();
 }

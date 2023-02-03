@@ -16,6 +16,7 @@ const commands = {
   done,
   today,
   debug,
+  search,
 };
 
 const command = Object.keys(commands).find(function (command) {
@@ -25,5 +26,5 @@ const command = Object.keys(commands).find(function (command) {
 if (command) {
   await commands[command](alfy.input.slice(`${command} `.length));
 } else {
-  await search(alfy.input);
+  await today(alfy.input);
 }
