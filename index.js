@@ -5,7 +5,6 @@
 import alfy from 'alfy';
 import login from './commands/login.js';
 import add from './commands/add.js';
-import done from './commands/done.js';
 import today from './commands/today.js';
 import debug from './commands/debug.js';
 import search from './commands/search.js';
@@ -13,7 +12,6 @@ import search from './commands/search.js';
 const commands = {
   login,
   add,
-  done,
   today,
   debug,
   search,

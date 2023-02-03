@@ -9,7 +9,7 @@ export default function login(input) {
     {
       title: 'Enter username and password.',
       subtitle: 'Press Enter to confirm. Split password with space.',
-      arg: input,
+      arg: `login ${input}`,
     },
   ]);
 }

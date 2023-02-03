@@ -15,11 +15,11 @@ async function main() {
         Cookie: `t=${token}`,
       },
       json: {
-        add: [],
-        addAttachments: [],
-        delete: [],
-        deleteAttachments: [],
-        updateAttachments: [],
+        // add: [],
+        // addAttachments: [],
+        // delete: [],
+        // deleteAttachments: [],
+        // updateAttachments: [],
         update: [JSON.parse(alfy.input)],
       },
     });

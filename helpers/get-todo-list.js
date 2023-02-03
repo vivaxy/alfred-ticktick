@@ -62,6 +62,10 @@ export default function getTodoList(todo) {
       variables: task,
     };
   });
+  return todoList;
+}
+
+export function addDefaultResult(todoList) {
   return todoList.length
     ? todoList
     : [
