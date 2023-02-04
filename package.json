@@ -10,7 +10,8 @@
   },
   "scripts": {
     "postinstall": "alfy-init",
-    "preuninstall": "alfy-cleanup"
+    "preuninstall": "alfy-cleanup",
+    "release": "standard-version && npm publish --access=public && git push --follow-tags"
   },
   "author": "vivaxy",
   "license": "MIT",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/vivaxy/alfred-ticktick#readme",
   "dependencies": {
-    "alfy": "^1.1.0"
+    "alfy": "^1.1.0",
+    "standard-version": "^9.5.0"
   }
 }
