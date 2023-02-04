@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/vivaxy/alfred-ticktick/compare/v1.1.0...v1.1.1) (2023-02-04)
+
+
+### Bug Fixes
+
+* fix login failed ([3f5b9d6](https://github.com/vivaxy/alfred-ticktick/commit/3f5b9d66c38b1f044f1e625f2131362f6a7c35d8))
+
 ## 1.1.0 (2023-02-04)
 
 
