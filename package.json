@@ -20,7 +20,20 @@
   },
   "homepage": "https://github.com/vivaxy/alfred-ticktick#readme",
   "dependencies": {
-    "alfy": "^1.1.0",
+    "alfy": "^1.1.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,css,less,json,md,html,yml,yaml,pcss,jsx,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "pinst": "^3.0.0",
+    "prettier": "^2.8.3",
     "standard-version": "^9.5.0"
   }
 }
