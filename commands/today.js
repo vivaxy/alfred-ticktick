@@ -16,7 +16,7 @@ export default async function today() {
         getTodoList(cachedTodo).filter(function ({ variables }) {
           const dueDate = getDate(new Date(variables.dueDate));
           const now = getDate(new Date());
-          return dueDate.getTime() === now.getTime();
+          return dueDate.getTime() <= now.getTime();
         })
       ),
       { rerunInterval: 1 }
