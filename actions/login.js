@@ -6,7 +6,7 @@ import alfy from 'alfy';
 
 async function main() {
   try {
-    const [username, password] = alfy.input.split(' ');
+    const [_login, username, password] = alfy.input.split(' ');
     alfy.config.set('username', username);
     alfy.config.set('password', password);
 
