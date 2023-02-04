@@ -8,8 +8,8 @@ export default function debug() {
   alfy.output(
     [
       {
-        title: 'rerun',
-        subtitle: process.env.COUNTER,
+        title: 'token',
+        subtitle: alfy.config.get('token'),
       },
     ],
     { rerunInterval: 1 }

@@ -15,8 +15,10 @@ async function main() {
       {
         method: 'POST',
         json: { username, password },
-      }
+      },
     );
+
+    alfy.config.set('token', token);
 
     console.log('Login successfully!');
   } catch (e) {
