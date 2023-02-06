@@ -3,6 +3,7 @@
  * @author vivaxy
  */
 import alfy from 'alfy';
+import { HOST } from '../helpers/config.js';
 
 async function main() {
   try {
@@ -11,7 +12,7 @@ async function main() {
     alfy.config.set('password', password);
 
     const { token } = await alfy.fetch(
-      'https://api.dida365.com/api/v2/user/signon?wc=true&remember=true',
+      `${HOST}/api/v2/user/signon?wc=true&remember=true`,
       {
         method: 'POST',
         json: { username, password },

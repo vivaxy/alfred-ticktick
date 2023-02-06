@@ -5,6 +5,7 @@
 import alfy from 'alfy';
 import { formatDate, getDate } from '../helpers/date.js';
 import generateId from '../helpers/id.js';
+import { HOST } from '../helpers/config.js';
 
 async function main() {
   const token = alfy.config.get('token');
@@ -14,7 +15,7 @@ async function main() {
 
   try {
     const createdTime = formatDate(new Date());
-    await alfy.fetch('https://api.dida365.com/api/v2/batch/task', {
+    await alfy.fetch(`${HOST}/api/v2/batch/task`, {
       method: 'POST',
       headers: {
         Cookie: `t=${token}`,

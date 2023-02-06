@@ -11,6 +11,9 @@ function pad(value, length, char = ' ') {
 }
 
 function getDueDate(task) {
+  if (!task.dueDate) {
+    return 'No due date';
+  }
   const dueDate = new Date(task.dueDate);
   return `${dueDate.getFullYear()}-${pad(dueDate.getMonth(), 2, '0')}-${pad(
     dueDate.getDate(),
@@ -45,69 +48,81 @@ function getSubtitle(task, todo) {
   )}`;
 }
 
+function createCompleteTaskMod(task) {
+  return {
+    arg: JSON.stringify({
+      requestJSON: {
+        add: [],
+        addAttachments: [],
+        delete: [],
+        deleteAttachments: [],
+        update: [
+          {
+            ...task,
+            status: 2,
+          },
+        ],
+        updateAttachments: [],
+      },
+      notification: 'Task completed!',
+    }),
+    subtitle: 'Press Enter to complete task.',
+  };
+}
+
+function createMarkWontDoMod(task) {
+  return {
+    arg: JSON.stringify({
+      requestJSON: {
+        add: [],
+        addAttachments: [],
+        delete: [],
+        deleteAttachments: [],
+        update: [
+          {
+            ...task,
+            status: -1,
+          },
+        ],
+        updateAttachments: [],
+      },
+      notification: "Task marked as won't do!",
+    }),
+    subtitle: "Press Enter to mark task as won't do.",
+  };
+}
+
+function createDeleteTaskMod(task) {
+  return {
+    arg: JSON.stringify({
+      requestJSON: {
+        add: [],
+        addAttachments: [],
+        delete: [
+          {
+            projectId: task.projectId,
+            taskId: task.id,
+          },
+        ],
+        deleteAttachments: [],
+        update: [],
+        updateAttachments: [],
+      },
+      notification: 'Task deleted!',
+    }),
+    subtitle: 'Press Enter to delete task.',
+  };
+}
+
 export default function getTodoList(todo) {
   const todoList = todo.syncTaskBean.update.map(function (task) {
     return {
       title: task.title,
       subtitle: getSubtitle(task, todo),
       mods: {
-        cmd: {
-          arg: JSON.stringify({
-            requestJSON: {
-              add: [],
-              addAttachments: [],
-              delete: [],
-              deleteAttachments: [],
-              update: [
-                {
-                  ...task,
-                  status: 2,
-                },
-              ],
-              updateAttachments: [],
-            },
-            notification: 'Task completed!',
-          }),
-          subtitle: 'Press Enter to complete task.',
-        },
-        alt: {
-          arg: JSON.stringify({
-            requestJSON: {
-              add: [],
-              addAttachments: [],
-              delete: [],
-              deleteAttachments: [],
-              update: [
-                {
-                  ...task,
-                  status: -1,
-                },
-              ],
-              updateAttachments: [],
-            },
-            notification: "Task marked as won't do!",
-          }),
-          subtitle: "Press Enter to mark task as won't do.",
-        },
-        ctrl: {
-          arg: JSON.stringify({
-            requestJSON: {
-              add: [],
-              addAttachments: [],
-              delete: [
-                {
-                  projectId: task.projectId,
-                  taskId: task.id,
-                },
-              ],
-              deleteAttachments: [],
-              update: [],
-              updateAttachments: [],
-            },
-            notification: 'Task deleted!',
-          }),
-          subtitle: 'Press Enter to delete task.',
-        },
+        cmd: createCompleteTaskMod(task),
+        alt: createMarkWontDoMod(task),
+        ctrl: createDeleteTaskMod(task),
       },
       variables: task,
     };
