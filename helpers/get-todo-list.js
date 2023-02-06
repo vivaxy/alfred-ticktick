@@ -15,7 +15,7 @@ function getDueDate(task) {
   return `${dueDate.getFullYear()}-${pad(dueDate.getMonth(), 2, '0')}-${pad(
     dueDate.getDate(),
     2,
-    '0'
+    '0',
   )}`;
 }
 
@@ -41,7 +41,7 @@ function getPriority(task) {
 
 function getSubtitle(task, todo) {
   return `${getPriority(task)} | ${getProject(task, todo)} | ${getDueDate(
-    task
+    task,
   )}`;
 }
 
@@ -53,10 +53,60 @@ export default function getTodoList(todo) {
       mods: {
         cmd: {
           arg: JSON.stringify({
-            ...task,
-            status: 2,
+            requestJSON: {
+              add: [],
+              addAttachments: [],
+              delete: [],
+              deleteAttachments: [],
+              update: [
+                {
+                  ...task,
+                  status: 2,
+                },
+              ],
+              updateAttachments: [],
+            },
+            notification: 'Task completed!',
           }),
           subtitle: 'Press Enter to complete task.',
+        },
+        alt: {
+          arg: JSON.stringify({
+            requestJSON: {
+              add: [],
+              addAttachments: [],
+              delete: [],
+              deleteAttachments: [],
+              update: [
+                {
+                  ...task,
+                  status: -1,
+                },
+              ],
+              updateAttachments: [],
+            },
+            notification: "Task marked as won't do!",
+          }),
+          subtitle: "Press Enter to mark task as won't do.",
+        },
+        ctrl: {
+          arg: JSON.stringify({
+            requestJSON: {
+              add: [],
+              addAttachments: [],
+              delete: [
+                {
+                  projectId: task.projectId,
+                  taskId: task.id,
+                },
+              ],
+              deleteAttachments: [],
+              update: [],
+              updateAttachments: [],
+            },
+            notification: 'Task deleted!',
+          }),
+          subtitle: 'Press Enter to delete task.',
         },
       },
       variables: task,

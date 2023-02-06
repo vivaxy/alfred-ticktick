@@ -7,6 +7,7 @@ import alfy from 'alfy';
 async function main() {
   const token = alfy.config.get('token');
   const cachedTodo = alfy.cache.get('todo');
+  const { requestJSON, notification } = JSON.parse(alfy.input);
 
   try {
     const resp = await alfy.fetch(`https://api.dida365.com/api/v2/batch/task`, {
@@ -14,16 +15,9 @@ async function main() {
       headers: {
         Cookie: `t=${token}`,
       },
-      json: {
-        // add: [],
-        // addAttachments: [],
-        // delete: [],
-        // deleteAttachments: [],
-        // updateAttachments: [],
-        update: [JSON.parse(alfy.input)],
-      },
+      json: requestJSON,
     });
-    console.log('Task completed!');
+    console.log(notification);
   } catch (e) {
     console.log(e.stack);
   }
