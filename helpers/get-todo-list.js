@@ -141,3 +141,21 @@ export function addDefaultResult(todoList) {
         },
       ];
 }
+
+export function sortTodoList(todoList) {
+  return todoList.sort(function (prev, next) {
+    const prevPriority = prev.variables.priority;
+    const nextPriority = next.variables.priority;
+    const prevDueDate = prev.variables.dueDate || 'As last';
+    const nextDueDate = next.variables.dueDate || 'As last';
+    return nextPriority < prevPriority
+      ? -1
+      : nextPriority > prevPriority
+      ? 1
+      : prevDueDate < nextDueDate
+      ? -1
+      : prevDueDate > nextDueDate
+      ? 1
+      : 0;
+  });
+}

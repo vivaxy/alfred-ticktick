@@ -3,7 +3,10 @@
  * @author vivaxy
  */
 import alfy from 'alfy';
-import getTodoList, { addDefaultResult } from '../helpers/get-todo-list.js';
+import getTodoList, {
+  addDefaultResult,
+  sortTodoList,
+} from '../helpers/get-todo-list.js';
 import updateTodo from '../helpers/update-todo.js';
 import { getDate } from '../helpers/date.js';
 
@@ -13,13 +16,15 @@ export default async function today() {
   try {
     alfy.output(
       addDefaultResult(
-        getTodoList(cachedTodo).filter(function ({ variables }) {
-          const dueDate = getDate(new Date(variables.dueDate));
-          const now = getDate(new Date());
-          return dueDate.getTime() <= now.getTime();
-        })
+        sortTodoList(
+          getTodoList(cachedTodo).filter(function ({ variables }) {
+            const dueDate = getDate(new Date(variables.dueDate));
+            const now = getDate(new Date());
+            return dueDate.getTime() <= now.getTime();
+          }),
+        ),
       ),
-      { rerunInterval: 1 }
+      { rerunInterval: 1 },
     );
   } catch (e) {}
 
