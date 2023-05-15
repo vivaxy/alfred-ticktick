@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/vivaxy/alfred-ticktick/compare/v1.1.3...v1.3.0) (2023-05-15)
+
+
+### Features
+
+* add delete task and won't do task ([882ca1b](https://github.com/vivaxy/alfred-ticktick/commit/882ca1b83e0d10e65e5b65fb3a98403368b8896c))
+* support Apple Shortcuts to create a new task and start a new pomo ([02bfc88](https://github.com/vivaxy/alfred-ticktick/commit/02bfc889883e621b34ff255bee8c52c45308314b))
+* support sorted todo list ([c9fdd0a](https://github.com/vivaxy/alfred-ticktick/commit/c9fdd0a95145ebea5596d2ad9ab0bb83d1f4ff59))
+
+
+### Bug Fixes
+
+* fix `display due date as NaN` ([4d6ac39](https://github.com/vivaxy/alfred-ticktick/commit/4d6ac390a3ff0c19f7fc55361af150e19b5a69a3))
+
 ### [1.1.3](https://github.com/vivaxy/alfred-ticktick/compare/v1.1.2...v1.1.3) (2023-02-04)
 
 
