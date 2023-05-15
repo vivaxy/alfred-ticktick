@@ -8,6 +8,8 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>16F5B952-AB45-4198-A6F6-FA5797D939F1</key>
+		<array/>
 		<key>2F8F8947-DDD8-4EA7-BEB6-95DA29875D86</key>
 		<array/>
 		<key>320C4B4E-EBF0-498B-B1D5-0534EC53650F</key>
@@ -134,6 +136,30 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>16F5B952-AB45-4198-A6F6-FA5797D939F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EA2489D8-3B7D-4336-A4F6-833D0A58E0F3</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>A3F10058-0DBF-4F98-A51B-8D74612A32B2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>3B9FAEA1-E7F6-4843-8A50-70130C5936E7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -143,6 +169,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</key>
+		<array/>
 		<key>DB6E7F9C-D0B5-4132-AA66-D2AE205466EA</key>
 		<array>
 			<dict>
@@ -252,6 +280,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>inputmode</key>
+				<integer>-1</integer>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>shortcut</key>
+				<string>快速添加任务到滴答 (文本模式)</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.runshortcut</string>
+			<key>uid</key>
+			<string>16F5B952-AB45-4198-A6F6-FA5797D939F1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -268,6 +313,34 @@
 						<key>uid</key>
 						<string>2F4021BF-AFB5-454F-8DE4-AC75DF4CBA7C</string>
 					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>new</string>
+						<key>outputlabel</key>
+						<string>new</string>
+						<key>uid</key>
+						<string>EA2489D8-3B7D-4336-A4F6-833D0A58E0F3</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>pomo</string>
+						<key>outputlabel</key>
+						<string>pomo</string>
+						<key>uid</key>
+						<string>A3F10058-0DBF-4F98-A51B-8D74612A32B2</string>
+					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>login</string>
@@ -280,6 +353,72 @@
 			<string>6EFECF84-5A21-41F8-80BB-2E64573DFDB8</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputmode</key>
+				<integer>-1</integer>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>shortcut</key>
+				<string>开始番茄</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.runshortcut</string>
+			<key>uid</key>
+			<string>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>tt</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node index.js "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Update available: 1.0.0 → 1.1.3. Run `npm install -g alfred-ticktick`</string>
+				<key>title</key>
+				<string>TickTick</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>320C4B4E-EBF0-498B-B1D5-0534EC53650F</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -345,55 +484,6 @@
 			<string>C62EA344-AEEA-4891-99F7-027EC23B9D86</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>tt</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Searching...</string>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Update available: 1.0.0 → 1.1.3. Run `npm install -g alfred-ticktick`</string>
-				<key>title</key>
-				<string>TickTick</string>
-				<key>type</key>
-				<integer>5</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>320C4B4E-EBF0-498B-B1D5-0534EC53650F</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -514,28 +604,35 @@
 		<key>07E3BCBB-38A0-4352-B263-B6DF2924A4F2</key>
 		<dict>
 			<key>xpos</key>
-			<real>480</real>
+			<real>655</real>
 			<key>ypos</key>
-			<real>555</real>
+			<real>845</real>
 		</dict>
 		<key>0B395296-E139-47B9-890D-63FE68BB159F</key>
 		<dict>
 			<key>xpos</key>
-			<real>480</real>
+			<real>655</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>565</real>
+		</dict>
+		<key>16F5B952-AB45-4198-A6F6-FA5797D939F1</key>
+		<dict>
+			<key>xpos</key>
+			<real>485</real>
+			<key>ypos</key>
+			<real>280</real>
 		</dict>
 		<key>2BA58DEF-0180-4634-93F2-42E2C597D58E</key>
 		<dict>
 			<key>xpos</key>
-			<real>475</real>
+			<real>650</real>
 			<key>ypos</key>
 			<real>150</real>
 		</dict>
 		<key>2F8F8947-DDD8-4EA7-BEB6-95DA29875D86</key>
 		<dict>
 			<key>xpos</key>
-			<real>270</real>
+			<real>485</real>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
@@ -544,33 +641,33 @@
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>535</real>
 		</dict>
 		<key>3610BDD7-EBC1-4392-9495-54BBB2BBCCF1</key>
 		<dict>
 			<key>xpos</key>
-			<real>270</real>
+			<real>485</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>980</real>
 		</dict>
 		<key>3B9FAEA1-E7F6-4843-8A50-70130C5936E7</key>
 		<dict>
 			<key>xpos</key>
-			<real>270</real>
+			<real>485</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>565</real>
 		</dict>
 		<key>3C9FAF46-3DCA-4553-9DE7-2B9491DAA9F5</key>
 		<dict>
 			<key>xpos</key>
-			<real>270</real>
+			<real>485</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>710</real>
 		</dict>
 		<key>51B82103-BCEA-4232-AFB2-B4C03F5C43CE</key>
 		<dict>
 			<key>xpos</key>
-			<real>270</real>
+			<real>485</real>
 			<key>ypos</key>
 			<real>150</real>
 		</dict>
@@ -584,30 +681,37 @@
 		<key>6EFECF84-5A21-41F8-80BB-2E64573DFDB8</key>
 		<dict>
 			<key>xpos</key>
-			<real>190</real>
+			<real>280</real>
 			<key>ypos</key>
-			<real>240</real>
+			<real>340</real>
 		</dict>
 		<key>C1AA9597-4B56-4868-9833-48BC878C7453</key>
 		<dict>
 			<key>xpos</key>
-			<real>480</real>
+			<real>655</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>980</real>
 		</dict>
 		<key>C62EA344-AEEA-4891-99F7-027EC23B9D86</key>
 		<dict>
 			<key>xpos</key>
-			<real>480</real>
+			<real>655</real>
+			<key>ypos</key>
+			<real>710</real>
+		</dict>
+		<key>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</key>
+		<dict>
+			<key>xpos</key>
+			<real>485</real>
 			<key>ypos</key>
 			<real>420</real>
 		</dict>
 		<key>DB6E7F9C-D0B5-4132-AA66-D2AE205466EA</key>
 		<dict>
 			<key>xpos</key>
-			<real>270</real>
+			<real>485</real>
 			<key>ypos</key>
-			<real>555</real>
+			<real>845</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
