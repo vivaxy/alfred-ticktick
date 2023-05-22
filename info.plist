@@ -285,7 +285,7 @@
 				<key>outputmode</key>
 				<integer>0</integer>
 				<key>shortcut</key>
-				<string>快速添加任务到滴答 (文本模式)</string>
+				<string>Quick add task (text mode)</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.automation.runshortcut</string>
@@ -362,7 +362,7 @@
 				<key>outputmode</key>
 				<integer>0</integer>
 				<key>shortcut</key>
-				<string>开始番茄</string>
+				<string>Start Pomo</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.automation.runshortcut</string>
