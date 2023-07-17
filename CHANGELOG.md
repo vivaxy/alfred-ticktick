@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/vivaxy/alfred-ticktick/compare/v1.3.0...v1.4.0) (2023-07-17)
+
+
+### Features
+
+* Add `tp` command to start TickTick Pomo ([eaa7527](https://github.com/vivaxy/alfred-ticktick/commit/eaa7527bb31b836a273b56e5d1c204332903f0d8))
+
+
+### Bug Fixes
+
+* update App Shortcuts references ([af08be1](https://github.com/vivaxy/alfred-ticktick/commit/af08be1c2eaacbe1d1f5cdd646df4f024d5b8e76))
+
 ## [1.3.0](https://github.com/vivaxy/alfred-ticktick/compare/v1.1.3...v1.3.0) (2023-05-15)
 
 
