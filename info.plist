@@ -81,6 +81,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3BEA463B-D063-47C5-928C-AB4DA2564D40</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3C9FAF46-3DCA-4553-9DE7-2B9491DAA9F5</key>
 		<array>
 			<dict>
@@ -143,18 +156,6 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>EA2489D8-3B7D-4336-A4F6-833D0A58E0F3</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>A3F10058-0DBF-4F98-A51B-8D74612A32B2</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -236,6 +237,44 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tp</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Start TickTick Pomo</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3BEA463B-D063-47C5-928C-AB4DA2564D40</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputmode</key>
+				<integer>-1</integer>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>shortcut</key>
+				<string>Start Pomo</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.runshortcut</string>
+			<key>uid</key>
+			<string>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -285,7 +324,7 @@
 				<key>outputmode</key>
 				<integer>0</integer>
 				<key>shortcut</key>
-				<string>Quick add task (text mode)</string>
+				<string>快速添加任务到滴答 (文本模式)</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.automation.runshortcut</string>
@@ -327,20 +366,6 @@
 						<key>uid</key>
 						<string>EA2489D8-3B7D-4336-A4F6-833D0A58E0F3</string>
 					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{query}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>pomo</string>
-						<key>outputlabel</key>
-						<string>pomo</string>
-						<key>uid</key>
-						<string>A3F10058-0DBF-4F98-A51B-8D74612A32B2</string>
-					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>login</string>
@@ -351,23 +376,6 @@
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>6EFECF84-5A21-41F8-80BB-2E64573DFDB8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputmode</key>
-				<integer>-1</integer>
-				<key>outputmode</key>
-				<integer>0</integer>
-				<key>shortcut</key>
-				<string>Start Pomo</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.automation.runshortcut</string>
-			<key>uid</key>
-			<string>D05E08AC-ADC4-4E65-83A4-454EE87F7CDC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -620,14 +628,14 @@
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>425</real>
 		</dict>
 		<key>2BA58DEF-0180-4634-93F2-42E2C597D58E</key>
 		<dict>
 			<key>xpos</key>
 			<real>650</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>285</real>
 		</dict>
 		<key>2F8F8947-DDD8-4EA7-BEB6-95DA29875D86</key>
 		<dict>
@@ -657,6 +665,13 @@
 			<key>ypos</key>
 			<real>565</real>
 		</dict>
+		<key>3BEA463B-D063-47C5-928C-AB4DA2564D40</key>
+		<dict>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>145</real>
+		</dict>
 		<key>3C9FAF46-3DCA-4553-9DE7-2B9491DAA9F5</key>
 		<dict>
 			<key>xpos</key>
@@ -669,7 +684,7 @@
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>285</real>
 		</dict>
 		<key>56F304C0-D324-4485-9624-BE4BD0D223AA</key>
 		<dict>
@@ -683,7 +698,7 @@
 			<key>xpos</key>
 			<real>280</real>
 			<key>ypos</key>
-			<real>340</real>
+			<real>430</real>
 		</dict>
 		<key>C1AA9597-4B56-4868-9833-48BC878C7453</key>
 		<dict>
@@ -704,7 +719,7 @@
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>145</real>
 		</dict>
 		<key>DB6E7F9C-D0B5-4132-AA66-D2AE205466EA</key>
 		<dict>
@@ -717,7 +732,7 @@
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/vivaxy/alfred-ticktick#readme</string>
 </dict>
